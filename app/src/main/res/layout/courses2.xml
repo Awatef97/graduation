@@ -1,0 +1,210 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar2"
+        android:layout_width="344dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="660dp"
+        android:background="@color/blue"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <Button
+        android:id="@+id/grades"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/grades"
+        android:padding="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/grades_text"
+        app:layout_constraintEnd_toStartOf="@+id/material"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar2"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_weight="1"
+        tools:layout_editor_absoluteX="72dp" />
+
+    <TextView
+        android:id="@+id/grades_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Grades"
+        android:textSize="25dp"
+        android:textColor="#75A9D2"
+        app:layout_constraintBottom_toTopOf="@+id/team_work"
+        app:layout_constraintEnd_toStartOf="@+id/material_text"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grades"
+        app:layout_constraintVertical_weight="1"
+        tools:layout_editor_absoluteX="49dp"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <Button
+        android:id="@+id/material"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/material"
+        app:layout_constraintBottom_toTopOf="@+id/material_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/grades"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar2"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_weight="1"
+        tools:layout_editor_absoluteX="208dp" />
+
+    <TextView
+        android:id="@+id/material_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Material"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/scan_qr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/grades_text"
+        app:layout_constraintTop_toBottomOf="@+id/material"
+        app:layout_constraintVertical_weight="1"
+        tools:layout_editor_absoluteX="201dp"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <Button
+        android:id="@+id/team_work"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/team_work"
+        app:layout_constraintBottom_toTopOf="@+id/team_work_text"
+        app:layout_constraintEnd_toStartOf="@+id/scan_qr"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grades_text"
+        app:layout_constraintVertical_weight="1"
+        tools:layout_editor_absoluteX="72dp" />
+
+    <TextView
+        android:id="@+id/team_work_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Team Work"
+        android:textSize="25dp"
+        android:textColor="#F1A51B"
+        app:layout_constraintBottom_toTopOf="@+id/attendances"
+        app:layout_constraintEnd_toStartOf="@+id/scan_qr_text"
+        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/team_work"
+        app:layout_constraintVertical_weight="1"
+        tools:layout_editor_absoluteX="53dp"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <Button
+        android:id="@+id/scan_qr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/scan_qr"
+        app:layout_constraintBottom_toTopOf="@+id/scan_qr_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/team_work"
+        app:layout_constraintTop_toBottomOf="@+id/material_text"
+        app:layout_constraintVertical_weight="1"
+        tools:layout_editor_absoluteX="208dp" />
+
+    <TextView
+        android:id="@+id/scan_qr_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scan_QR"
+        android:textSize="25dp"
+        android:textColor="#D84588"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/team_work_text"
+        app:layout_constraintTop_toBottomOf="@+id/scan_qr"
+        app:layout_constraintVertical_weight="1"
+        tools:layout_editor_absoluteX="228dp"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <Button
+        android:id="@+id/attendances"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/attendances"
+        app:layout_constraintBottom_toTopOf="@+id/attendances_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/team_work_text"
+        app:layout_constraintVertical_weight="1"
+        tools:layout_editor_absoluteX="78dp" />
+
+    <TextView
+        android:id="@+id/attendances_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Attendances"
+        android:textSize="25dp"
+        android:textColor="#6AB21A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.358"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/attendances"
+        app:layout_constraintVertical_weight="1"
+        tools:layout_editor_absoluteX="73dp"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="45dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="45dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="56dp"
+        tools:layout_editor_absoluteY="56dp"
+        tools:layout_editor_absoluteX="0dp" />
+
+
+</android.support.constraint.ConstraintLayout>

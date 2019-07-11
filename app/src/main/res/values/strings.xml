@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Loggin</string>
+    <string name="Login">Login</string>
+    <string name="Password">password</string>
+    <string name="Username">username</string>
+    <string name="application">Application</string>
+    <string name="courses">Courses</string>
+    <string name="esa">ESA</string>
+    <string name="education_service">Education service</string>
+    <string name="news">News</string>
+    <string name="profile">Profile</string>
+    <string name="timetable">TimeTable</string>
+    <string name="Position">position</string>
+    <string name="Email">Email</string>
+    <string name="Passwowd">password</string>
+    <string name="Name">name</string>
+    <string name="application1">Application</string>
+    <string name="news1">News</string>
+    <string name="ok">Ok</string>
+    <string name="add_new_task">Add New Task</string>
+    <string name="status">Status</string>
+    <string name="task">Task</string>
+    <string name="mid">Mid</string>
+    <string name="name">Name</string>
+    <string name="quiz_1">Quiz #1</string>
+    <string name="quiz_2">Quiz #2</string>
+<string-array name="usertype">
+    <item>Doctor</item>
+    <item>Student</item>
+</string-array>
+</resources>
