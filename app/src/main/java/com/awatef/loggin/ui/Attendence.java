@@ -1,17 +1,22 @@
-package com.awatef.loggin;
+package com.awatef.loggin.ui;
 
 /**
  * Created by awatef on 6/30/2019.
  */
 
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.widget.Adapter;
 import android.widget.CheckBox;
+
+import com.awatef.loggin.AttendanceAdapter;
+import com.awatef.loggin.AttendanceTable;
+import com.awatef.loggin.R;
+import com.awatef.loggin.ResultTable;
 
 import java.util.ArrayList;
 import java.util.List;

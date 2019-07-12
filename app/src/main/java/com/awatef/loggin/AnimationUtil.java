@@ -2,7 +2,7 @@ package com.awatef.loggin;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by awatef on 2/24/2019.

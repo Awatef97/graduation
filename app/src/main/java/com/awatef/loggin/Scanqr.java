@@ -5,4 +5,5 @@ package com.awatef.loggin;
  */
 
 public class Scanqr {
+
 }

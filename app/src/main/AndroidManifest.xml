@@ -13,48 +13,43 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Splash">
+        <activity android:name=".ui.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".ui.MainActivity" />
 
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
 
         <activity
-            android:name=".content"
-            android:parentActivityName=".MainActivity" />
+            android:name=".ui.content"
+            android:parentActivityName=".ui.MainActivity" />
         <activity
-            android:name=".Profile"
-            android:parentActivityName=".content" />
+            android:name=".ui.Profile"
+            android:parentActivityName=".ui.content" />
         <activity
-            android:name=".Courses"
-            android:parentActivityName=".content" />
+            android:name=".ui.Courses"
+            android:parentActivityName=".ui.content" />
         <activity
-            android:name=".News"
-            android:parentActivityName=".content" />
+            android:name=".ui.News"
+            android:parentActivityName=".ui.content" />
         <activity
-            android:name=".Courses2"
-            android:parentActivityName=".Courses" />
+            android:name=".ui.Courses2"
+            android:parentActivityName=".ui.Courses" />
         <activity
-            android:name=".Grade"
-            android:parentActivityName=".Courses2" />
+            android:name=".ui.Grade"
+            android:parentActivityName=".ui.Courses2" />
         <activity
-            android:name=".Attendence"
-            android:parentActivityName=".Courses2" />
+            android:name=".ui.Attendence"
+            android:parentActivityName=".ui.Courses2" />
         <activity
-            android:name=".Timetable"
-            android:parentActivityName=".Courses2" />
+            android:name=".ui.Timetable"
+            android:parentActivityName=".ui.Courses2" />
         <activity
-            android:name=".Timetable1"
-            android:parentActivityName=".Timetable" />
+            android:name=".ui.Timetable1"
+            android:parentActivityName=".ui.Timetable" />
     </application>
 
 </manifest>

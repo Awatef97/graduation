@@ -1,8 +1,10 @@
-package com.awatef.loggin;
+package com.awatef.loggin.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.awatef.loggin.R;
 
 /**
  * Created by awatef on 6/28/2019.

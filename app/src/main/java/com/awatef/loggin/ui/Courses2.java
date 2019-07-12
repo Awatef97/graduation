@@ -1,12 +1,15 @@
-package com.awatef.loggin;
+package com.awatef.loggin.ui;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+
+import com.awatef.loggin.R;
+import com.awatef.loggin.Scanqr;
 
 //import static com.awatef.loggin.R.layout.courses2;
 
@@ -93,7 +96,7 @@ import android.widget.Button;
         startActivity(intent);
     }
        public void scanqrActivity(){
-        Intent intent=new Intent(this,Scanqr.class);
+        Intent intent=new Intent(this, Scanqr.class);
 
         Intent intent1 =getIntent();
         //String text = intent1.getStringExtra(MainActivity.EXTRA_TEXT);

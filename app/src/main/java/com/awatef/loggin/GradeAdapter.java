@@ -14,13 +14,13 @@ import android.view.ViewGroup;
 import java.util.Collections;
 import java.util.List;
 
- class Adapter extends RecyclerView.Adapter <GradesHolder>
+public class GradeAdapter extends RecyclerView.Adapter <GradesHolder>
 {
 
     List<GradeTable> grades = Collections.emptyList();
     Context context;
 
-    public Adapter(List<GradeTable> grades, Context context) {
+    public GradeAdapter(List<GradeTable> grades, Context context) {
 
         this.grades = grades;
         this.context = context;

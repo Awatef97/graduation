@@ -1,12 +1,16 @@
-package com.awatef.loggin;
+package com.awatef.loggin.ui;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 
+import com.awatef.loggin.GradeAdapter;
+import com.awatef.loggin.GradeTable;
+import com.awatef.loggin.R;
+import com.awatef.loggin.ResultTable1;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +26,7 @@ import retrofit2.http.GET;
  */
 public class Grade extends AppCompatActivity {
 
-    Adapter adapter;
+    GradeAdapter adapter;
     RecyclerView recyclerView;
 
     @Override
@@ -55,7 +59,7 @@ public class Grade extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResultTable1> call, Response<ResultTable1> response) {
                 List<GradeTable> grades=response.body().getTable();
-                adapter=new Adapter(grades,getApplication());
+                adapter=new GradeAdapter(grades,getApplication());
                 recyclerView.setAdapter(adapter);
 
             }

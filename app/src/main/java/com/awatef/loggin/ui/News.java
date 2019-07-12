@@ -1,10 +1,10 @@
-package com.awatef.loggin;
+package com.awatef.loggin.ui;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -13,6 +13,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.awatef.loggin.CheckInternetConnection;
+import com.awatef.loggin.List_Item;
+import com.awatef.loggin.R;
+import com.awatef.loggin.RecyclerViewAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
