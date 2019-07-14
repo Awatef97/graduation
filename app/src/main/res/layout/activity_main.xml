@@ -36,7 +36,7 @@
         android:background="@drawable/border"
         android:ems="10"
         android:fontFamily="serif"
-        android:hint="@string/Username"
+        android:hint="@string/Email"
         android:inputType="textPersonName"
 
         android:textAlignment="center"
@@ -122,6 +122,7 @@
         app:layout_constraintRight_toRightOf="parent" />
 
     <Spinner
+        android:visibility="gone"
         android:id="@+id/spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

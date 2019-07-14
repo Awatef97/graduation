@@ -24,8 +24,8 @@
     <string name="name">Name</string>
     <string name="quiz_1">Quiz #1</string>
     <string name="quiz_2">Quiz #2</string>
-<string-array name="usertype">
-    <item>Doctor</item>
-    <item>Student</item>
-</string-array>
+    <string-array name="usertype">
+        <item>Doctor</item>
+        <item>Student</item>
+    </string-array>
 </resources>

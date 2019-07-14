@@ -6,6 +6,25 @@
     android:layout_height="match_parent"
     android:background="@drawable/back"
     >
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="344dp"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:layout_editor_absoluteX="8dp"
+        tools:ignore="MissingConstraints" >
+        <ImageView
+            android:id="@+id/logoutIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_logout"
+            android:padding="4dp"
+            android:rotation="180"
+            />
+    </androidx.appcompat.widget.Toolbar>
 
     <Button
         android:id="@+id/btnprofile"
@@ -14,6 +33,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:visibility="gone"
         android:layout_marginTop="60dp"
         android:background="@drawable/profile1"
         android:onClick="profile"
@@ -41,6 +61,7 @@
         app:layout_constraintVertical_bias="0.227" />
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/txtprofile"
         android:layout_width="121dp"
         android:layout_height="wrap_content"
@@ -112,6 +133,7 @@
         app:layout_constraintVertical_bias="0.551" />
 
     <TextView
+        android:gravity="center"
         android:id="@+id/txtnews"
         android:textColor="@android:color/holo_green_dark"
         android:layout_width="wrap_content"
@@ -154,6 +176,7 @@
         app:layout_constraintVertical_bias="0.137" />
 
     <ImageView
+        android:visibility="gone"
         android:id="@+id/imageView"
         android:layout_width="120dp"
         android:layout_height="62dp"
@@ -172,6 +195,7 @@
         tools:ignore="ContentDescription" />
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/txtlogo"
         android:layout_width="95dp"
         android:layout_height="56dp"
@@ -211,6 +235,7 @@
         app:layout_constraintVertical_bias="0.085" />
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/txtapp"
         android:layout_width="wrap_content"
         android:layout_height="31dp"

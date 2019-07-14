@@ -9,10 +9,12 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="ESA"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.QRActivity"></activity>
+        <activity android:name=".ui.TableSubjectActivity" />
         <activity android:name=".ui.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,11 +23,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.MainActivity" />
-
-
         <activity
             android:name=".ui.content"
-            android:parentActivityName=".ui.MainActivity" />
+            />
         <activity
             android:name=".ui.Profile"
             android:parentActivityName=".ui.content" />
@@ -47,9 +47,7 @@
         <activity
             android:name=".ui.Timetable"
             android:parentActivityName=".ui.Courses2" />
-        <activity
-            android:name=".ui.Timetable1"
-            android:parentActivityName=".ui.Timetable" />
+        <activity android:name=".ui.Timetable1" />
     </application>
 
 </manifest>

@@ -7,25 +7,14 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.awatef.loggin.R;
 import com.awatef.loggin.model.Course;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
 
 
 import java.util.ArrayList;
 
-/**
- * Created by karim pc on 11/8/2017.
- */
 
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder> {
@@ -35,10 +24,10 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
     private OnCourseClickListener onCourseActionListener;
 
 
-    public CourseAdapter(Context context, ArrayList<Course> courses) {
+    public CourseAdapter(Context context, ArrayList<Course> courses ,OnCourseClickListener onCourseActionListener) {
         this.courses = courses;
         this.context = context;
-
+          this.onCourseActionListener = onCourseActionListener ;
     }
 
 
@@ -60,7 +49,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                onBookActionListener.onBookClick(holder.book);
+       onCourseActionListener.onCourseClick(holder.course);
             }
         });
 

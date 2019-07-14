@@ -47,9 +47,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="Grades"
+        android:text="Grades   "
         android:textSize="25dp"
+        android:gravity="start"
         android:textColor="#75A9D2"
+        android:layout_marginEnd="24dp"
         app:layout_constraintBottom_toTopOf="@+id/team_work"
         app:layout_constraintEnd_toStartOf="@+id/material_text"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -98,7 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/team_work"
+        android:background="@drawable/attendances"
         app:layout_constraintBottom_toTopOf="@+id/team_work_text"
         app:layout_constraintEnd_toStartOf="@+id/scan_qr"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -113,9 +115,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="Team Work"
+        android:text="Attendances"
         android:textSize="25dp"
-        android:textColor="#F1A51B"
+        android:textColor="#6AB21A"
+        android:layout_marginEnd="40dp"
+        android:gravity="start"
         app:layout_constraintBottom_toTopOf="@+id/attendances"
         app:layout_constraintEnd_toStartOf="@+id/scan_qr_text"
         app:layout_constraintHorizontal_bias="0.58"
@@ -158,6 +162,7 @@
         tools:ignore="HardcodedText,SpUsage" />
 
     <Button
+        android:visibility="gone"
         android:id="@+id/attendances"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -172,6 +177,7 @@
         tools:layout_editor_absoluteX="78dp" />
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/attendances_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

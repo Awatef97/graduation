@@ -42,14 +42,13 @@ import retrofit2.http.GET;
  * Created by awatef on 6/30/2019.
  */
 
-public class Courses extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class Courses extends AppCompatActivity implements AdapterView.OnItemSelectedListener, CourseAdapter.OnCourseClickListener {
 
     public static final String EXTRA_TEXT = "com.example.courses.EXTRA_TEXT";
     private CourseAdapter adapter;
 
     private Button button;
     private RecyclerView coursesRV;
-
     public ArrayList<Course> courses ;
 
 
@@ -58,38 +57,31 @@ public class Courses extends AppCompatActivity implements AdapterView.OnItemSele
         super.onCreate(savedInstanceState);
         setContentView(R.layout.courses);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        Toolbar toolbar =  findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
         courses = new ArrayList<>();
         getSupportActionBar().setTitle("Courses");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setTitleTextColor(Color.WHITE);
 
-        coursesRV = (RecyclerView) findViewById(R.id.coursesRV);
-        adapter = new CourseAdapter(this, courses);
+        coursesRV =  findViewById(R.id.coursesRV);
+        adapter = new CourseAdapter(this, courses,this);
         coursesRV.setLayoutManager(new GridLayoutManager(this, 1));
         coursesRV.setAdapter(adapter);
 
-
-        /* open new activity  **/
         getCourses();
-
-        button = (Button) findViewById(R.id.ok);
+        button =  findViewById(R.id.ok);
         button.setTextColor(Color.WHITE);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivity2();
             }
         });
-
-
     }
 
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
 
     }
 
@@ -145,6 +137,13 @@ public class Courses extends AppCompatActivity implements AdapterView.OnItemSele
                         Log.d("ListenerCourses", "Error");
                     }
                 });
+    }
+
+    @Override
+    public void onCourseClick(Course course) {
+        Intent i = new Intent(this, Courses2.class);
+        i.putExtra("sampleObject", course);
+        startActivity(i);
     }
 
 }

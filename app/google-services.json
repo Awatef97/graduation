@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "361794311480",
+    "firebase_url": "https://gradproject-98d56.firebaseio.com",
+    "project_id": "gradproject-98d56",
+    "storage_bucket": "gradproject-98d56.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:361794311480:android:37ade91b040a7086",
+        "android_client_info": {
+          "package_name": "com.awatef.loggin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "361794311480-pf8hul9iv76624h99dkgmv98cko8n5kb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.awatef.loggin",
+            "certificate_hash": "9dc41e847ef4454088d1d0f5fef546727ca4ef54"
+          }
+        },
+        {
+          "client_id": "361794311480-ollpk4760mu9a55bue0o8u7rm9rm0pos.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjsu0xpLYa8lLTwvbbckpHMjqXG6Myfbo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "361794311480-ollpk4760mu9a55bue0o8u7rm9rm0pos.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

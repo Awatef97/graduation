@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button buttonRegister;
     private ProgressDialog ProgressDialog;
     private Spinner _spinner;
-    private String URLline = "";
 
     private FirebaseAuth mAuth;
     private User recievedUser;
@@ -76,9 +75,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 public void onDataChange(DataSnapshot dataSnapshot) {
                                     recievedUser = dataSnapshot.getValue(User.class);
                                     if (recievedUser != null) {
-
                                         if (recievedUser.getType().equals("Doctor")) {
-                                            Intent i = new Intent(MainActivity.this, Profile.class);//بدل الcontent اكتب اسم اكتيفيتي الطالب
+                                            Intent i = new Intent(MainActivity.this, content.class);//بدل الcontent اكتب اسم اكتيفيتي الطالب
                                             Bundle b = new Bundle();
                                             b.putString("UserName", String.valueOf(editTextUsername));
                                             b.putString("Password", String.valueOf(editTextPassword));
@@ -114,148 +112,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ProgressDialog.setMessage("Logining user....");
         ProgressDialog.show();
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new
-                                                                                        OnCompleteListener<AuthResult>() {
-                                                                                            @Override
-                                                                                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                                                                                ProgressDialog.cancel();
-                                                                                                if (!task.isSuccessful()) {
-                                                                                                    if (task.getException() instanceof FirebaseAuthInvalidUserException
-                                                                                                            || task.getException()
-                                                                                                            instanceof FirebaseAuthInvalidCredentialsException) {
-                                                                                                        Toast.makeText(MainActivity.this, "Wrong Email or Password",
-                                                                                                                Toast.LENGTH_SHORT).show();
-                                                                                                    } else
-                                                                                                        Toast.makeText(MainActivity.this, "Error In Connection",
-                                                                                                                Toast.LENGTH_SHORT).show();
-                                                                                                }
-                                                                                            }
-                                                                                        });
+    OnCompleteListener<AuthResult>() {
+        @Override
+        public void onComplete(@NonNull Task<AuthResult> task) {
+            ProgressDialog.cancel();
+            if (!task.isSuccessful()) {
+                if (task.getException() instanceof FirebaseAuthInvalidUserException
+                        || task.getException()
+                        instanceof FirebaseAuthInvalidCredentialsException) {
+                    Toast.makeText(MainActivity.this, "Wrong Email or Password",
+                            Toast.LENGTH_SHORT).show();
+                } else
+                    Toast.makeText(MainActivity.this, "Error In Connection",
+                            Toast.LENGTH_SHORT).show();
+            }
+        }
+    });
     }
 
 
-    private void registerUser() {
-
-        final String username = editTextUsername.getText().toString().trim();
-        final String password = editTextPassword.getText().toString().trim();
-        //final String type_id = ;
-
-        String UsernameKey = "username=";
-        String PasswordKey = "&password=";
-        String type_idKey = "&type_id";
-        URLline = "http://192.168.1.4/login/login.php?";
-
-        final String Final_Link = URLline + UsernameKey + username + PasswordKey + password + type_idKey;
-
-      /*  if (TextUtils.isEmpty(username)) {
-            editTextUsername.setError("Please enter your username");
-            editTextUsername.requestFocus();
-            return;
-        }
-
-        if (TextUtils.isEmpty(password)) {
-            editTextPassword.setError("Please enter your password");
-            editTextPassword.requestFocus();
-            return;
-        }*/
-
-        ProgressDialog.setMessage("Registering user....");
-        ProgressDialog.show();
-
-        if (username.equals("") || password.equals("")) {
-            Toast.makeText(MainActivity.this, "Please Enter your Data Completely", Toast.LENGTH_LONG).show();
-        } else {
-
-            StringRequest stringRequest = new StringRequest(Request.Method.GET, Final_Link,
-                    new Response.Listener<String>() {
-
-                        @Override
-                        public void onResponse(String response) {
-
-                            /*try {
-                                JSONArray jsonArray = new JSONArray(response);
-                                JSONObject jsonObject = jsonArray.getJSONObject(0);
-
-                                String type_id = jsonObject.getString("type_id");
-
-
-                               // firstNameTV.setText(firstName);
-                               // lastNameTV.setText(lastName);
-
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }*/
-
-
-                            if (response.contains("login successfully")) {
-                               /* Intent i = new Intent(MainActivity.this,content.class);
-                                startActivity(i);*/
-                                String item = _spinner.getSelectedItem().toString();
-                                if (item.equals("Doctor")) {
-                                    Intent i = new Intent(MainActivity.this, Profile.class);//بدل الcontent اكتب اسم اكتيفيتي الطالب
-                                    Bundle b = new Bundle();
-                                    b.putString("UserName", String.valueOf(editTextUsername));
-                                    b.putString("Password", String.valueOf(editTextPassword));
-                                    i.putExtras(b);
-                                    startActivity(i);
-
-                                } else if (item.equals("Student")) {
-                                    Intent i = new Intent(MainActivity.this, content.class);//بدل الcontent اكتب اسم اكتيفيتي الدكتور
-                                    Bundle b = new Bundle();
-                                    b.putString("UserName", String.valueOf(editTextUsername));
-                                    b.putString("Password", String.valueOf(editTextPassword));
-                                    i.putExtras(b);
-                                    startActivity(i);
-                                } else {
-                                    Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
-                                }
-
-                            }
-                            if (response.contains("incorrect username or password ")) {
-                                Toast.makeText(MainActivity.this, response, Toast.LENGTH_LONG)
-                                        .show();
-                            }
-
-                            //هحط الtry&&catch عشان لو الترميز عربي مايحصلش مشكله
-                       /* try {
-                            String encodedstring= URLEncoder.encode(response,"ISO-8859-1");
-                            response= URLDecoder.decode(encodedstring,"UTF-8");
-                        }catch (UnsupportedEncodingException e){
-                               e.printStackTrace();
-                        }*/
-
-                            ProgressDialog.dismiss();
-                            /*try {
-                                JSONObject jsonObject =new JSONObject(response);
-                                Toast.makeText(getApplicationContext(),jsonObject.getString("message"),Toast.LENGTH_LONG).show();
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }*/
-
-                        }
-                    },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            ProgressDialog.hide();
-                            Toast.makeText(MainActivity.this, error.getLocalizedMessage(), Toast.LENGTH_LONG).show();
-                        }
-                    }) {
-
-           /* @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String , String> params = new HashMap<>();
-                params.put("username",username);
-                params.put("password",password);
-
-                return params;
-            }*/
-            };
-            RequestQueue requestQueue = Volley.newRequestQueue(this);
-            requestQueue.add(stringRequest);
-
-        }
-
-    }
 
     @Override
     public void onClick(View view) {

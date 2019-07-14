@@ -11,21 +11,25 @@ public class User implements Serializable {
     private String name;
     private String id;
     private String type;
-
-    public User(String email, String id) {
-        this.email = email;
-        this.id = id;
-    }
+    private int attendence;
 
     public User() {
+    }
+
+    public User(String email, String name, String id, String type, int attendence) {
+        this.email = email;
+        this.name = name;
+        this.id = id;
+        this.type = type;
+        this.attendence = attendence;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public String getId() {
-        return id;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getName() {
@@ -36,12 +40,28 @@ public class User implements Serializable {
         this.name = name;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getType() {
         return type;
     }
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public int getAttendence() {
+        return attendence;
+    }
+
+    public void setAttendence(int attendence) {
+        this.attendence = attendence;
     }
 
     @Override
@@ -51,6 +71,7 @@ public class User implements Serializable {
                 ", name='" + name + '\'' +
                 ", id='" + id + '\'' +
                 ", type='" + type + '\'' +
+                ", attendence=" + attendence +
                 '}';
     }
 }
